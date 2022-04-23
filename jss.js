@@ -227,54 +227,70 @@ document.querySelector('.prices').appendChild(senjoruGroup);
 
 //-----------------------------------------------c---------------------------------------------------------------------------
 //Dinamiškai su JS kiekvienoje gyvūnų kategorijoje po “PATINKA” pridėkite dar vieną li elementą “NEPATINKA”, kurį paspaudus atitinkamoje sekcijoje būtų nuimta klasė like
-const disLike = document.createElement('li')
-disLike.innerText = 'NEPATINKA';
-disLike.style.cursor = 'pointer';
-disLike.addEventListener('click', (e)=>{
-        ul.classList.remove('like')
-})
-document.querySelector('ul').append(disLike)
 
-
-/* const disLike1 = document.createElement('li.dislike-button')
+const disLike1 = document.createElement('li.dislike-button')
 disLike1.innerText = 'NEPATINKA';
 disLike1.style.cursor = 'pointer';
 disLike1.addEventListener('click', (e)=>{
-        disLike1.parentNode.classList.remove('like')
+disLike1.parentElement.classList.remove('like')
 })
 const disLike2 = document.createElement('li.dislike-button')
 disLike2.innerText = 'NEPATINKA';
 disLike2.style.cursor = 'pointer';
 disLike2.addEventListener('click', (e)=>{
-        disLike2.parentNode.classList.remove('like')
+disLike2.parentElement.classList.remove('like')
 })
-
 const disLike3 = document.createElement('li.dislike-button')
 disLike3.innerText = 'NEPATINKA';
 disLike3.style.cursor = 'pointer';
 disLike3.addEventListener('click', (e)=>{
-        disLike3.parentNode.classList.remove('like')
+disLike3.parentElement.classList.remove('like')
 })
-
 const disLike4 = document.createElement('li.dislike-button')
 disLike4.innerText = 'NEPATINKA';
 disLike4.style.cursor = 'pointer';
 disLike4.addEventListener('click', (e)=>{
-        disLike4.parentNode.classList.remove('like')
+disLike4.parentElement.classList.remove('like')
 })
 
 
-4
+let aCategory1 = document.querySelector('ul:first-child .like-button');
+let aCategory2 = document.querySelector('ul:nth-child(3) .like-button')
+let aCategory3 = document.querySelector('ul:nth-child(5) li')
+let aCategory4 = document.querySelector('ul:last-child li')
 
-document.querySelector('#zirafos').appendChild(disLike1)
-document.querySelector('#plesrunai').appendChild(disLike2)
-document.querySelector('#gyvates').appendChild(disLike3)
-document.querySelector('#zoliaedziai').appendChild(disLike4)
+aCategory1.parentNode.insertBefore(disLike1, aCategory1.nextSibling)
+aCategory2.parentNode.insertBefore(disLike2, aCategory2.nextSibling)
+aCategory3.parentNode.insertBefore(disLike3, aCategory3.nextSibling)
+aCategory4.parentNode.insertBefore(disLike4, aCategory4.nextSibling)
 
- */
+
+
 
 
 //--------------------------------------------------------------------d------------------------------------------------------------------------------
 //Dinamiškai su JS sukurkite naują mygtukų grupę HEADER 3 naudojant analogišką html tagų struktūrą kaip ir HEADER 1 ir HEADER 2. Pirmas mygtukas vadintųsi, “Pabraukti H1 tagą”, o antras “Nepabraukti H1 tagą”. Mygtukai turi daryti tai kas ant jų parašyta
+
+
+const header3 = document.createElement('fieldset');
+const legendForHeader3 = document.createElement('legend');
+legendForHeader3.innerText="HEADER 3"
+
+const buttonPabraukti = document.createElement('button');
+buttonPabraukti.setAttribute('id','h1-underline');
+buttonPabraukti.innerText="Pabraukti H1 tagą";
+buttonPabraukti.addEventListener('click', (e)=>{
+    h1.style.textDecoration = 'underline';
+})
+
+const buttonNePabraukti = document.createElement('button');
+buttonNePabraukti.setAttribute('id','h1-noUnderline');
+buttonNePabraukti.innerText="Nepabraukti H1 tagą";
+buttonNePabraukti.addEventListener('click', (e)=>{
+    h1.style.textDecoration = 'none';
+})
+header3.append(legendForHeader3, buttonPabraukti,buttonNePabraukti)
+const fieldset3 = document.querySelector('fieldset:last-of-type');
+document.body.insertBefore(header3,fieldset3.nextSibling);
 
 
